@@ -222,10 +222,17 @@ function getCountOfContactsByState(stateName)
     console.log("Total no of contacts in the state "+stateName+" are: ")
     console.log(addressBookArray.filter(contact => contact.state == stateName).length);
 }
+function sortAddressBookByName()
+{
+    console.log(addressBookArray.sort((contact1, contact2) => (contact1.firstName)
+                                .localeCompare(contact2.firstName)).toString());
 
+}
 searchContactsByCity("Guntur","Pushpa")
 searchContactsByState("Andhra Pradesh","Chandra")
 viewContactsByCity("Guntur")
 viewContactsByState("Andhra Pradesh")
 getCountOfContactsByCity("Guntur");
 getCountOfContactsByState("Andhra Pradesh");
+console.log("Sorting contacts");
+sortAddressBookByName();
