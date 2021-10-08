@@ -185,11 +185,34 @@ function numberOfContacts(totalCount) {
 let totalNumberOfContacts = addressBookArray.reduce(numberOfContacts, 0);
 console.log("Total Number of Contacts in the Address Book Array : " + totalNumberOfContacts);
 
-console.log("Searching contacts by city name :")
-let cityName = "Guntur"
-addressBookArray.filter(contact => contact.city == cityName)
-    .forEach(contact => console.log(contact.toString()))
-console.log("Searching contacts by state name :")
-let stateName = "Andhra Pradesh"
-addressBookArray.filter(contact => contact.state == stateName)
-    .forEach(contact => console.log(contact.toString()))
+function searchContactsByCity(cityName,firstName)
+{
+    console.log("Searching contacts in a city  :")
+    addressBookArray.filter(contact => contact.city == cityName && contact.firstName==firstName)
+        .forEach(contact => console.log(contact.toString()))
+}
+function searchContactsByState(stateName,firstName)
+{
+    console.log("Searching contacts in state :")
+    addressBookArray.filter(contact => contact.state == stateName && contact.firstName==firstName)
+        .forEach(contact => console.log(contact.toString()))
+}
+
+function viewContactsByCity(cityName)
+{
+    console.log("View contacts by city name :")
+    addressBookArray.filter(contact => contact.city == cityName)
+        .forEach(contact => console.log(contact.toString()))
+}  
+
+function viewContactsByState(stateName)
+{
+    console.log("View contacts by state name :")
+    addressBookArray.filter(contact => contact.state == stateName)
+        .forEach(contact => console.log(contact.toString()))
+}
+
+searchContactsByCity("Guntur","Pushpa")
+searchContactsByState("Andhra Pradesh","Chandra")
+viewContactsByCity("Guntur")
+viewContactsByState("Andhra Pradesh")
