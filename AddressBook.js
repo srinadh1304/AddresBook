@@ -141,3 +141,45 @@ let contact3=new Contact("Pushpa", "Tadiparthi", "Tenali", "Guntur", "Andhra Pra
 addressBookArray.push(contact3);
 
 addressBookArray.forEach(contact => console.log(contact.toString())); 
+function checkContact(firstName) 
+{
+    return addressBookArray.some(contact => contact.firstName == firstName );
+}
+
+function editContactDetails(firstName, property, newValue) 
+{
+    if (checkContact(firstName)) {
+        switch (property) {
+            case "lastName":
+                addressBookArray.find((contact) => contact.firstName == firstName).lastName = newValue;
+                break;
+            case "address":
+                addressBookArray.find((contact) => contact.firstName == firstName).address = newValue;
+                break;
+            case "city":
+                addressBookArray.find((contact) => contact.firstName == firstName).city = newValue;
+                break;
+            case "state":
+                addressBookArray.find((contact) => contact.firstName == firstName).state = newValue;
+                break;
+            case "zip":
+                addressBookArray.find((contact) => contact.firstName == firstName).zip = newValue;
+                break;
+            case "phoneNumber":
+                addressBookArray.find((contact) => contact.firstName == firstName).phoneNumber = newValue;
+                break;
+            case "email":
+                addressBookArray.find((contact) => contact.firstName == firstName).email = newValue;
+                break;
+            default:
+                console.log("Enter valid property");
+        }
+    }
+    else {
+        console.log("Contact Does Not Exist");
+    }
+}
+
+editContactDetails("Srinadh", "lastName", "Mirchi");
+console.log("After changing")
+addressBookArray.forEach(contact => console.log(contact.toString())); 
