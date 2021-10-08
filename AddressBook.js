@@ -200,3 +200,9 @@ function deleteContact(firstName)
 deleteContact("Srinadh");
 console.log("After deleting contact from address book : ")
 addressBookArray.forEach(contact => console.log(contact.toString())); 
+function numberOfContacts(totalCount) 
+{
+    return totalCount + 1;
+}
+let totalNumberOfContacts = addressBookArray.reduce(numberOfContacts,0);
+console.log("Total Number of Contacts in the Address Book Array : " + totalNumberOfContacts); 
