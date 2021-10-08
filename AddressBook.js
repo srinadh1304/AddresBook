@@ -211,8 +211,21 @@ function viewContactsByState(stateName)
     addressBookArray.filter(contact => contact.state == stateName)
         .forEach(contact => console.log(contact.toString()))
 }
+function getCountOfContactsByCity(cityName)
+{
+    console.log("Total no of contacts in the city "+cityName+" are: ")
+    console.log(addressBookArray.filter(contact => contact.city == cityName).length);
+}
+
+function getCountOfContactsByState(stateName)
+{
+    console.log("Total no of contacts in the state "+stateName+" are: ")
+    console.log(addressBookArray.filter(contact => contact.state == stateName).length);
+}
 
 searchContactsByCity("Guntur","Pushpa")
 searchContactsByState("Andhra Pradesh","Chandra")
 viewContactsByCity("Guntur")
 viewContactsByState("Andhra Pradesh")
+getCountOfContactsByCity("Guntur");
+getCountOfContactsByState("Andhra Pradesh");
