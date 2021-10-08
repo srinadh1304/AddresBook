@@ -131,6 +131,13 @@ class Contact
             "  ,Phone Number: " + this.phoneNumber + " , Email: " + this.email + "\n";
     }
 }
+let addressBookArray = new Array();
+let contact1 = new Contact("Srinadh", "Tadiparthi", "Tenali", "Guntur", "Andhra Pradesh", 522201, 9290090032, "srinadh@gmail.com");
+addressBookArray.push(contact1);
+let contact2=new Contact("Chandra", "Tadiparthi", "Tenali", "Guntur", "Andhra Pradesh", 522201, 8463934331, "chandra@gmail.com");
+addressBookArray.push(contact2);
 
-let contact = new Contact("Srinadh", "Tadiparthi", "Tenali", "Guntur", "Andhra Pradesh", 522201, 9290090032, "srinadh@gmail.com");
-console.log(contact.toString());
+let contact3=new Contact("Pushpa", "Tadiparthi", "Tenali", "Guntur", "Andhra Pradesh", 522201, 7207121134, "pushpa@gmail.com");
+addressBookArray.push(contact3);
+
+addressBookArray.forEach(contact => console.log(contact.toString())); 
