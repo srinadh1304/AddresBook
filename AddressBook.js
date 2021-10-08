@@ -107,7 +107,7 @@ class Contact {
 }
 let addressBookArray = new Array();
 let contact1 = new Contact("Srinadh", "Tadiparthi", "Tenali", "Guntur", "Andhra Pradesh", 522201, 9290090032, "srinadh@gmail.com");
-let contact2 = new Contact("Chandra", "Tadiparthi", "Tenali", "Kollipara", "Andhra Pradesh", 522201, 8463934331, "chandra@gmail.com");
+let contact2 = new Contact("Chandra", "Tadiparthi", "Tenali", "Kollipara", "Karnataka", 562201, 8463934331, "chandra@gmail.com");
 let contact3 = new Contact("Pushpa", "Tadiparthi", "Tenali", "Guntur", "Andhra Pradesh", 522201, 7207121134, "pushpa@gmail.com");
 
 checkForDuplicate(contact1)
@@ -228,6 +228,36 @@ function sortAddressBookByName()
                                 .localeCompare(contact2.firstName)).toString());
 
 }
+function SortByZip(){
+    addressBookArray.sort((contact1,contact2) =>{
+        if(contact1._zip > contact2._zip)
+            return 1;
+        else if(contact1._zip < contact2._zip)
+            return -1;
+        else 0;
+    })
+}
+
+function SortByCity(){
+    console.log(addressBookArray.sort((contact1, contact2) => (contact1.city)
+                                .localeCompare(contact2.city)).toString());
+}
+
+function SortByState(){
+    console.log(addressBookArray.sort((contact1, contact2) => (contact1.state)
+    .localeCompare(contact2.state)).toString());
+}
+
+console.log("sortedArray based on Zip: ")
+SortByZip();
+console.log(addressBookArray.toString())
+
+console.log("sortedArray based on City: ")
+SortByCity();
+
+console.log("sortedArray based on State: ")
+SortByState();
+
 searchContactsByCity("Guntur","Pushpa")
 searchContactsByState("Andhra Pradesh","Chandra")
 viewContactsByCity("Guntur")
