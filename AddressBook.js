@@ -181,5 +181,22 @@ function editContactDetails(firstName, property, newValue)
 }
 
 editContactDetails("Srinadh", "lastName", "Mirchi");
-console.log("After changing")
+console.log("After Editing")
+addressBookArray.forEach(contact => console.log(contact.toString())); 
+
+function deleteContact(firstName)
+{
+    let index = addressBookArray.findIndex(contact => contact.firstName == firstName)
+    if (index != -1) 
+    {
+        addressBookArray.splice(index, 1)
+    } 
+    else 
+    {
+        console.log(`${firstName} not found`)
+    }
+}
+
+deleteContact("Srinadh");
+console.log("After deleting contact from address book : ")
 addressBookArray.forEach(contact => console.log(contact.toString())); 
